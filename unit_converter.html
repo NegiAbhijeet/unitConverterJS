@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unit Converter</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+	.container{
+		background: yellow;
+		height: 100vh;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.header{
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.header h1{
+		font-size: 50px;
+		color: #00b4d8;
+	}
+	.mid_cont{
+		width: 400px;
+		height: 400px;
+		background: red;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+	}
+	.container{
+		background: #03045e;
+	}
+	.mid_cont{
+		background: #023e8a;
+	}
+	#box1{
+		background: #0077b6;
+		width: 300px;
+	}
+	#box2{
+		background: #0096c7;
+		width: 300px;
+	}
+	#box3{
+		background: #00b4d8;
+		width: 300px;
+	}
+	input{
+		background: #00b4d8;
+		font-size: 20px;
+		border-radius: 20px;
+		color: white;
+		padding-left: 20px;
+	}
+	::placeholder{
+		color: white
+	}
+</style>
+<body>
+
+<div class="container">
+	<div class="header">
+		<h1>Unit Converter</h1>
+	</div>
+	<div class="mid_cont">
+		<div>
+			<input type="number" id="kg" name="" placeholder="Enter kilograms">
+		</div>
+		<div id="output">
+			<div class="card">
+				<div class="card-block" id="box1">
+					<h3>Grams:</h3>
+					<div id="gramout"></div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-block" id="box2">
+					<h3>Pounds:</h3>
+					<div id="poundout"></div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-block" id="box3">
+					<h3>centigrams:</h3>
+					<div id="centiout"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	document.getElementById('output').style.visibility="hidden";
+	document.getElementById('kg').addEventListener('input',function(e){
+		let grams=e.target.value;
+		document.getElementById('gramout').innerHTML=grams*1000;
+		document.getElementById('poundout').innerHTML=grams*2.20462;
+		document.getElementById('centiout').innerHTML=grams*100000;
+		document.getElementById('output').style.visibility="visible";
+
+	})
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
